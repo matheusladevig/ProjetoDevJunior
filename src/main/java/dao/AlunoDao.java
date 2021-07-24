@@ -112,7 +112,7 @@ public class AlunoDao {
         try{
             conn = DB.getConnection();
             StringBuilder sql = new StringBuilder()
-                    .append("SELECT * FROM aluno ");
+                    .append("SELECT * FROM aluno where id_situacaocadastro = 1 ");
             st = conn.prepareStatement(sql.toString());
             rs = st.executeQuery();
             

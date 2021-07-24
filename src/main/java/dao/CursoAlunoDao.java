@@ -94,24 +94,30 @@ public class CursoAlunoDao {
         try{
             conn = DB.getConnection();
             
-            StringBuilder sql = new StringBuilder()
-                    .append("SELECT ca.id, ca.id_aluno, ca.id_curso, ca.classe, a.nome, c.descricao")
-                    .append(" FROM curso_aluno ca")
-                    .append(" INNER JOIN aluno a ON a.id = ca.id_aluno")
-                    .append(" INNER JOIN curso c ON c.id = ca.id_curso")
-                    .append(" INNER JOIN situacaocadastro sc on sc.id = ca.id_situacaocadastro")
-                    .append(" WHERE ca.classe ilike ?")
-                    .append(" AND sc.descricao ilike ?")
-                    .append(" AND ca.id::text ilike ?")
-                    .append(" AND a.nome ilike ?")
-                    .append(" AND c.descricao ilike ?");
-            
+            StringBuilder sql = new StringBuilder();
+                    sql.append("SELECT ca.id, ca.id_aluno, ca.id_curso, ca.classe, a.nome, c.descricao");
+                    sql.append(" FROM curso_aluno ca");
+                    sql.append(" INNER JOIN aluno a ON a.id = ca.id_aluno");
+                    sql.append(" INNER JOIN curso c ON c.id = ca.id_curso");
+                    sql.append(" INNER JOIN situacaocadastro sc on sc.id = ca.id_situacaocadastro");
+                    if(!desc.isEmpty()){
+                        sql.append(" WHERE ca.classe ilike '%" +desc+ "%'");
+                    }
+                    if(!cursoAluno.getPesquisaSituacao().isEmpty()){
+                        sql.append(" AND sc.descricao ilike '%" +cursoAluno.getPesquisaSituacao()+ "%'");
+                    }
+                    if(!cursoAluno.getPesquisaAluno().isEmpty()){
+                       sql.append(" AND a.nome ilike '%" +cursoAluno.getPesquisaAluno()+ "%'"); 
+                    }
+                    if(!cursoAluno.getPesquisaCurso().isEmpty()){
+                        sql.append(" AND c.descricao ilike '%" +cursoAluno.getPesquisaCurso()+ "%'");
+                    }
+                    if(cursoAluno.getCodigo() != null){
+                        sql.append(" AND ca.id = " +cursoAluno.getCodigo()+ " order by id");
+                    }
+                              
             st = conn.prepareStatement(sql.toString());
-            st.setString(1, "%" + desc + "%");
-            st.setString(2, "%" + cursoAluno.getPesquisaSituacao() + "%");
-            st.setString(3, "%" + cursoAluno.getPesquisa() + "%");
-            st.setString(4, "%" + cursoAluno.getPesquisaAluno() + "%");
-            st.setString(5, "%" + cursoAluno.getPesquisaCurso() + "%");
+
             rs = st.executeQuery();
             
             

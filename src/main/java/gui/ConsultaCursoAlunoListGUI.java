@@ -329,13 +329,8 @@ public class ConsultaCursoAlunoListGUI extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        String id = tabela.getValueAt(tabela.getSelectedRow(), 0).toString();
-        cursoAlunoModel.setCodigo(Integer.parseInt(id));
-        cursoAlunoController.deleteCursoAluno(cursoAlunoModel);
-        JOptionPane.showMessageDialog(this, "Excluido com sucesso");
-        Pesquisar();
+        Excluir();
     }//GEN-LAST:event_jButton9ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TextId;
@@ -361,22 +356,23 @@ public class ConsultaCursoAlunoListGUI extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
      private void Pesquisar() throws HeadlessException {
         String descricao;
-        String codigo;
+        Integer codigo;
         String pesquisa;
         String pesquisaAluno;
         String pesquisaCurso;
              
         if (TextId.getText().isEmpty() && txtPesquisa.getText().isEmpty() )  {
-            JOptionPane.showMessageDialog(this, "Nada informado");
+            JOptionPane.showMessageDialog(this, "Digite um campo para Consulta");
             descricao = null;
-            codigo = null;
+
             pesquisa = null;
             pesquisaAluno = null;
             pesquisaCurso = null;
         }
         else{
-            codigo = TextId.getText();
-            cursoAlunoModel.setPesquisa(codigo);
+            if(TextId.getText().isEmpty()){
+            codigo = null;
+            cursoAlunoModel.setCodigo(codigo);
             descricao = txtPesquisa.getText();
            
             if("TODOS".equals(cbSituacao.getSelectedItem())){
@@ -400,6 +396,34 @@ public class ConsultaCursoAlunoListGUI extends javax.swing.JInternalFrame {
                 cursoAlunoModel.setPesquisaCurso(pesquisaCurso);
                 filtro.cbCurso.setSelectedIndex(0);
                 
+            }  
+            }else{
+            codigo = Integer.parseInt(TextId.getText());
+            cursoAlunoModel.setCodigo(codigo);
+            descricao = txtPesquisa.getText();
+           
+            if("TODOS".equals(cbSituacao.getSelectedItem())){
+                cursoAlunoModel.setPesquisaSituacao("");
+            }else{
+                pesquisa = cbSituacao.getSelectedItem().toString();
+                cursoAlunoModel.setPesquisaSituacao(pesquisa);
+            }
+            if("TODOS".equals(filtro.cbAluno.getSelectedItem())){
+                 cursoAlunoModel.setPesquisaAluno("");
+            }else{
+                pesquisaAluno = filtro.cbAluno.getSelectedItem().toString();
+                cursoAlunoModel.setPesquisaAluno(pesquisaAluno);
+                filtro.cbAluno.setSelectedIndex(0);
+                
+            }
+            if("TODOS".equals(filtro.cbCurso.getSelectedItem())){
+                cursoAlunoModel.setPesquisaCurso("");
+            }else{
+                pesquisaCurso = filtro.cbCurso.getSelectedItem().toString();
+                cursoAlunoModel.setPesquisaCurso(pesquisaCurso);
+                filtro.cbCurso.setSelectedIndex(0);
+                
+            }
             }
             
         }
@@ -459,6 +483,12 @@ public class ConsultaCursoAlunoListGUI extends javax.swing.JInternalFrame {
             }
         }
     }
-   
+     private void Excluir() throws NumberFormatException, HeadlessException {
+        String id = tabela.getValueAt(tabela.getSelectedRow(), 0).toString();
+        cursoAlunoModel.setCodigo(Integer.parseInt(id));
+        cursoAlunoController.deleteCursoAluno(cursoAlunoModel);
+        JOptionPane.showMessageDialog(this, "Excluido com sucesso");
+        Pesquisar();
+    }
 
 }

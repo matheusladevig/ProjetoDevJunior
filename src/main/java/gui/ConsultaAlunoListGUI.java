@@ -389,7 +389,7 @@ public class ConsultaAlunoListGUI extends javax.swing.JInternalFrame {
         
 
         if (TextId.getText().isEmpty() && txtPesquisa.getText().isEmpty() )  {
-            JOptionPane.showMessageDialog(this, "Nada informado");
+            JOptionPane.showMessageDialog(this, "Digite um campo para Consulta");
             descricao = null;
             pesquisa = null;
           

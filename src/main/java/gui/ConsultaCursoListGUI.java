@@ -318,18 +318,20 @@ public class ConsultaCursoListGUI extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
  private void Pesquisar() throws HeadlessException {
         String descricao;
-        String codigo;
+        Integer codigo;
         String pesquisa;
         
         
         if (TextId.getText().isEmpty() && txtPesquisa.getText().isEmpty() )  {
-            JOptionPane.showMessageDialog(this, "Nada informado");
+            JOptionPane.showMessageDialog(this, "Digite um campo para Consulta");
             descricao = null;
-            codigo = null;
-            pesquisa = null;}
+            pesquisa = null;
+  
+        }
         else{
-            codigo = TextId.getText();
-            cursoModel.setPesquisa(codigo);
+            if(TextId.getText().isEmpty()){
+            codigo = null;
+            cursoModel.setCodigo(codigo);
             descricao = txtPesquisa.getText();
             if("TODOS".equals(cbSituacao.getSelectedItem())){
                 cursoModel.setPesquisaSituacao("");
@@ -337,7 +339,19 @@ public class ConsultaCursoListGUI extends javax.swing.JInternalFrame {
                 pesquisa = cbSituacao.getSelectedItem().toString();
                 cursoModel.setPesquisaSituacao(pesquisa);
             }
-        }
+        }else{
+            codigo = Integer.parseInt(TextId.getText());
+            cursoModel.setCodigo(codigo);
+            descricao = txtPesquisa.getText();
+            if("TODOS".equals(cbSituacao.getSelectedItem())){
+                cursoModel.setPesquisaSituacao("");
+            }else{
+                pesquisa = cbSituacao.getSelectedItem().toString();
+                cursoModel.setPesquisaSituacao(pesquisa);
+            }
+    
+            }
+                    }
         
         VRTableModel tableModel = new VRTableModel();
         tableModel.addColumn("Código");

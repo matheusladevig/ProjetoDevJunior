@@ -75,7 +75,7 @@ public class CursoDao {
         try{
             conn = DB.getConnection();
             StringBuilder sql = new StringBuilder()
-                    .append("SELECT * FROM curso");
+                    .append("SELECT * FROM curso where id_situacaocadastro = 1");
             st = conn.prepareStatement(sql.toString());
             
             rs = st.executeQuery();
@@ -109,14 +109,21 @@ public class CursoDao {
         
         try{
             conn = DB.getConnection();
-            StringBuilder sql = new StringBuilder()
-                    .append("SELECT c.id, c.descricao, c.ementa, c.id_situacaocadastro FROM curso c")
-                    .append(" INNER JOIN situacaocadastro sc on sc.id = c.id_situacaocadastro")
-                    .append(" where c.descricao ilike ? and sc.descricao ilike ? and c.id::text ilike ? order by id");
+            StringBuilder sql = new StringBuilder();
+                    sql.append("SELECT c.id, c.descricao, c.ementa, c.id_situacaocadastro FROM curso c");
+                    sql.append(" INNER JOIN situacaocadastro sc on sc.id = c.id_situacaocadastro");
+                    if(!desc.isEmpty()){
+                        sql.append(" WHERE c.descricao ilike '%" +desc+ "%'");
+                    }
+                    if(!curso.getPesquisaSituacao().isEmpty()){
+                        sql.append(" and sc.descricao ilike '%" +curso.getPesquisaSituacao()+ "%'");
+                    }
+                    if(curso.getCodigo() != null){
+                         sql.append(" and a.id = " +curso.getCodigo()+ " order by id");
+                    }
+           
             st = conn.prepareStatement(sql.toString());       
-            st.setString(1, "%" + desc + "%");
-            st.setString(2, "%" + curso.getPesquisaSituacao() + "%");
-            st.setString(3, "%" + curso.getPesquisa() + "%");
+
             rs = st.executeQuery();
             
             

@@ -8,71 +8,29 @@ gui/CadastroAlunoListGUI.java
  gui.CadastroAlunoListGUI$6
  gui.CadastroAlunoListGUI$7
  gui.CadastroAlunoListGUI$8
-gui/CadastroCursoListGUI.java
- gui.CadastroCursoListGUI
- gui.CadastroCursoListGUI$1
- gui.CadastroCursoListGUI$2
- gui.CadastroCursoListGUI$3
- gui.CadastroCursoListGUI$4
- gui.CadastroCursoListGUI$5
- gui.CadastroCursoListGUI$6
-dao/CursoAlunoDao.java
- dao.CursoAlunoDao
+gui/ConsultaCursoListGUI.java
+ gui.ConsultaCursoListGUI
+ gui.ConsultaCursoListGUI$1
+ gui.ConsultaCursoListGUI$2
+ gui.ConsultaCursoListGUI$3
+ gui.ConsultaCursoListGUI$4
+ gui.ConsultaCursoListGUI$5
+ gui.ConsultaCursoListGUI$6
+ gui.ConsultaCursoListGUI$7
+ gui.ConsultaCursoListGUI$8
+controller/CursoController.java
+ controller.CursoController
 model/CursoAluno.java
  model.CursoAluno
 model/Aluno.java
  model.Aluno
-dao/AlunoDao.java
- dao.AlunoDao
-gui/CadastroCursoAlunoListGUI.java
- gui.CadastroCursoAlunoListGUI
- gui.CadastroCursoAlunoListGUI$1
- gui.CadastroCursoAlunoListGUI$2
- gui.CadastroCursoAlunoListGUI$3
- gui.CadastroCursoAlunoListGUI$4
- gui.CadastroCursoAlunoListGUI$5
- gui.CadastroCursoAlunoListGUI$6
- gui.CadastroCursoAlunoListGUI$7
- gui.CadastroCursoAlunoListGUI$8
+main/Main.java
+ main.Main
+ main.Main$1
+dao/CriaTabelas.java
+ dao.CriaTabelas
 controller/SituacaoCadastroController.java
  controller.SituacaoCadastroController
-controller/AlunoController.java
- controller.AlunoController
-dao/SituacaoCadastroDao.java
- dao.SituacaoCadastroDao
-gui/MainView.java
- gui.MainView
- gui.MainView$1
- gui.MainView$2
- gui.MainView$3
- gui.MainView$4
- gui.MainView$5
-services/CursoService.java
- services.CursoService
-model/LookAndFeel.java
- model.LookAndFeel
-model/GerenciadorCaracteres.java
- model.GerenciadorCaracteres
-model/SituacaoCadastro.java
- model.SituacaoCadastro
-services/CursoAlunoService.java
- services.CursoAlunoService
-model/GerenciadorJanela.java
- model.GerenciadorJanela
-gui/FiltroCursoAlunoGUI.java
- gui.FiltroCursoAlunoGUI
- gui.FiltroCursoAlunoGUI$1
- gui.FiltroCursoAlunoGUI$2
-model/VRTableModel.java
- model.VRTableModel
-db/DbException.java
- db.DbException
-model/GerenciadorNumeros.java
- model.GerenciadorNumeros
-model/Curso.java
- model.Curso
-controller/CursoController.java
- controller.CursoController
 gui/ConsultaAlunoListGUI.java
  gui.ConsultaAlunoListGUI
  gui.ConsultaAlunoListGUI$1
@@ -85,6 +43,59 @@ gui/ConsultaAlunoListGUI.java
  gui.ConsultaAlunoListGUI$7
  gui.ConsultaAlunoListGUI$8
  gui.ConsultaAlunoListGUI$9
+dao/SituacaoCadastroDao.java
+ dao.SituacaoCadastroDao
+gui/CadastroCursoListGUI.java
+ gui.CadastroCursoListGUI
+ gui.CadastroCursoListGUI$1
+ gui.CadastroCursoListGUI$2
+ gui.CadastroCursoListGUI$3
+ gui.CadastroCursoListGUI$4
+ gui.CadastroCursoListGUI$5
+ gui.CadastroCursoListGUI$6
+gui/CadastroCursoAlunoListGUI.java
+ gui.CadastroCursoAlunoListGUI
+ gui.CadastroCursoAlunoListGUI$1
+ gui.CadastroCursoAlunoListGUI$2
+ gui.CadastroCursoAlunoListGUI$3
+ gui.CadastroCursoAlunoListGUI$4
+ gui.CadastroCursoAlunoListGUI$5
+ gui.CadastroCursoAlunoListGUI$6
+ gui.CadastroCursoAlunoListGUI$7
+ gui.CadastroCursoAlunoListGUI$8
+model/LookAndFeel.java
+ model.LookAndFeel
+model/GerenciadorCaracteres.java
+ model.GerenciadorCaracteres
+model/SituacaoCadastro.java
+ model.SituacaoCadastro
+services/CursoService.java
+ services.CursoService
+model/GerenciadorJanela.java
+ model.GerenciadorJanela
+db/DB.java
+ db.DB
+model/VRTableModel.java
+ model.VRTableModel
+db/DbException.java
+ db.DbException
+model/GerenciadorNumeros.java
+ model.GerenciadorNumeros
+model/Curso.java
+ model.Curso
+dao/CursoDao.java
+ dao.CursoDao
+gui/CriarPropertiesGUI.java
+ gui.CriarPropertiesGUI
+ gui.CriarPropertiesGUI$1
+ gui.CriarPropertiesGUI$2
+ gui.CriarPropertiesGUI$3
+ gui.CriarPropertiesGUI$4
+ gui.CriarPropertiesGUI$5
+gui/FiltroCursoAlunoGUI.java
+ gui.FiltroCursoAlunoGUI
+ gui.FiltroCursoAlunoGUI$1
+ gui.FiltroCursoAlunoGUI$2
 gui/ConsultaCursoAlunoListGUI.java
  gui.ConsultaCursoAlunoListGUI
  gui.ConsultaCursoAlunoListGUI$1
@@ -96,33 +107,22 @@ gui/ConsultaCursoAlunoListGUI.java
  gui.ConsultaCursoAlunoListGUI$7
  gui.ConsultaCursoAlunoListGUI$8
  gui.ConsultaCursoAlunoListGUI$9
-gui/ConsultaCursoListGUI.java
- gui.ConsultaCursoListGUI
- gui.ConsultaCursoListGUI$1
- gui.ConsultaCursoListGUI$2
- gui.ConsultaCursoListGUI$3
- gui.ConsultaCursoListGUI$4
- gui.ConsultaCursoListGUI$5
- gui.ConsultaCursoListGUI$6
- gui.ConsultaCursoListGUI$7
- gui.ConsultaCursoListGUI$8
+controller/AlunoController.java
+ controller.AlunoController
 controller/CursoAlunoController.java
  controller.CursoAlunoController
 services/AlunoService.java
  services.AlunoService
-main/Main.java
- main.Main
- main.Main$1
-gui/CriarPropertiesGUI.java
- gui.CriarPropertiesGUI
- gui.CriarPropertiesGUI$1
- gui.CriarPropertiesGUI$2
- gui.CriarPropertiesGUI$3
- gui.CriarPropertiesGUI$4
- gui.CriarPropertiesGUI$5
-dao/CursoDao.java
- dao.CursoDao
-db/DB.java
- db.DB
-dao/CriaTabelas.java
- dao.CriaTabelas
+dao/CursoAlunoDao.java
+ dao.CursoAlunoDao
+gui/MainView.java
+ gui.MainView
+ gui.MainView$1
+ gui.MainView$2
+ gui.MainView$3
+ gui.MainView$4
+ gui.MainView$5
+dao/AlunoDao.java
+ dao.AlunoDao
+services/CursoAlunoService.java
+ services.CursoAlunoService
