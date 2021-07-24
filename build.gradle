@@ -1,0 +1,43 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+mainClassName = 'main.Main'
+
+tasks.withType(JavaCompile) {
+ options.encoding = 'UTF-8'
+ options.fork = true
+}
+
+jar {
+    zip64=true
+    archiveBaseName = 'ProjetoDev'
+    manifest {
+        attributes 'Main-Class': application.mainClass
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    from { 
+        configurations.runtimeClasspath.collect { 
+            it.isDirectory() ? it : zipTree(it) 
+        } 
+    } {
+        exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+    }
+}
+
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.20'
+    implementation group: 'org.apache.maven.plugins', name: 'maven-jar-plugin', version: '3.0.2'
+}
