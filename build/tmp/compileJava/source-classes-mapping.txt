@@ -8,16 +8,18 @@ gui/CadastroAlunoListGUI.java
  gui.CadastroAlunoListGUI$6
  gui.CadastroAlunoListGUI$7
  gui.CadastroAlunoListGUI$8
-gui/ConsultaCursoListGUI.java
- gui.ConsultaCursoListGUI
- gui.ConsultaCursoListGUI$1
- gui.ConsultaCursoListGUI$2
- gui.ConsultaCursoListGUI$3
- gui.ConsultaCursoListGUI$4
- gui.ConsultaCursoListGUI$5
- gui.ConsultaCursoListGUI$6
- gui.ConsultaCursoListGUI$7
- gui.ConsultaCursoListGUI$8
+gui/ConsultaAlunoListGUI.java
+ gui.ConsultaAlunoListGUI
+ gui.ConsultaAlunoListGUI$1
+ gui.ConsultaAlunoListGUI$10
+ gui.ConsultaAlunoListGUI$2
+ gui.ConsultaAlunoListGUI$3
+ gui.ConsultaAlunoListGUI$4
+ gui.ConsultaAlunoListGUI$5
+ gui.ConsultaAlunoListGUI$6
+ gui.ConsultaAlunoListGUI$7
+ gui.ConsultaAlunoListGUI$8
+ gui.ConsultaAlunoListGUI$9
 controller/CursoController.java
  controller.CursoController
 model/CursoAluno.java
@@ -31,18 +33,8 @@ dao/CriaTabelas.java
  dao.CriaTabelas
 controller/SituacaoCadastroController.java
  controller.SituacaoCadastroController
-gui/ConsultaAlunoListGUI.java
- gui.ConsultaAlunoListGUI
- gui.ConsultaAlunoListGUI$1
- gui.ConsultaAlunoListGUI$10
- gui.ConsultaAlunoListGUI$2
- gui.ConsultaAlunoListGUI$3
- gui.ConsultaAlunoListGUI$4
- gui.ConsultaAlunoListGUI$5
- gui.ConsultaAlunoListGUI$6
- gui.ConsultaAlunoListGUI$7
- gui.ConsultaAlunoListGUI$8
- gui.ConsultaAlunoListGUI$9
+dao/AlunoDao.java
+ dao.AlunoDao
 dao/SituacaoCadastroDao.java
  dao.SituacaoCadastroDao
 gui/CadastroCursoListGUI.java
@@ -96,6 +88,16 @@ gui/FiltroCursoAlunoGUI.java
  gui.FiltroCursoAlunoGUI
  gui.FiltroCursoAlunoGUI$1
  gui.FiltroCursoAlunoGUI$2
+services/CursoAlunoService.java
+ services.CursoAlunoService
+controller/AlunoController.java
+ controller.AlunoController
+controller/CursoAlunoController.java
+ controller.CursoAlunoController
+services/AlunoService.java
+ services.AlunoService
+dao/CursoAlunoDao.java
+ dao.CursoAlunoDao
 gui/ConsultaCursoAlunoListGUI.java
  gui.ConsultaCursoAlunoListGUI
  gui.ConsultaCursoAlunoListGUI$1
@@ -107,14 +109,16 @@ gui/ConsultaCursoAlunoListGUI.java
  gui.ConsultaCursoAlunoListGUI$7
  gui.ConsultaCursoAlunoListGUI$8
  gui.ConsultaCursoAlunoListGUI$9
-controller/AlunoController.java
- controller.AlunoController
-controller/CursoAlunoController.java
- controller.CursoAlunoController
-services/AlunoService.java
- services.AlunoService
-dao/CursoAlunoDao.java
- dao.CursoAlunoDao
+gui/ConsultaCursoListGUI.java
+ gui.ConsultaCursoListGUI
+ gui.ConsultaCursoListGUI$1
+ gui.ConsultaCursoListGUI$2
+ gui.ConsultaCursoListGUI$3
+ gui.ConsultaCursoListGUI$4
+ gui.ConsultaCursoListGUI$5
+ gui.ConsultaCursoListGUI$6
+ gui.ConsultaCursoListGUI$7
+ gui.ConsultaCursoListGUI$8
 gui/MainView.java
  gui.MainView
  gui.MainView$1
@@ -122,7 +126,3 @@ gui/MainView.java
  gui.MainView$3
  gui.MainView$4
  gui.MainView$5
-dao/AlunoDao.java
- dao.AlunoDao
-services/CursoAlunoService.java
- services.CursoAlunoService

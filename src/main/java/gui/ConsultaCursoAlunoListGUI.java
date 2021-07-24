@@ -425,9 +425,6 @@ public class ConsultaCursoAlunoListGUI extends javax.swing.JInternalFrame {
                 
             }
             }
-            
-        }
-        
         VRTableModel tableModel = new VRTableModel();
         tableModel.addColumn("Codigo");
         tableModel.addColumn("Codigo Aluno");
@@ -449,7 +446,10 @@ public class ConsultaCursoAlunoListGUI extends javax.swing.JInternalFrame {
             });
         }
         
-        tabela.setModel(tableModel);
+        tabela.setModel(tableModel);    
+        }
+        
+        
         
         
     }

@@ -418,9 +418,7 @@ public class ConsultaAlunoListGUI extends javax.swing.JInternalFrame {
                 pesquisa = cbSituacao.getSelectedItem().toString();
                 alunoModel.setTeste(pesquisa);
             }   
-            }       
-        }
-
+            }
         VRTableModel tableModel = new VRTableModel();
         tableModel.addColumn("Código");
         tableModel.addColumn("Nome Aluno");
@@ -433,6 +431,9 @@ public class ConsultaAlunoListGUI extends javax.swing.JInternalFrame {
             });
         }
         tabela.setModel(tableModel);
+        }
+
+        
        
     }
     

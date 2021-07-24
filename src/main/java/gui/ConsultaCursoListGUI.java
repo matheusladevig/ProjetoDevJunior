@@ -351,8 +351,6 @@ public class ConsultaCursoListGUI extends javax.swing.JInternalFrame {
             }
     
             }
-                    }
-        
         VRTableModel tableModel = new VRTableModel();
         tableModel.addColumn("Código");
         tableModel.addColumn("Descrição");
@@ -367,6 +365,9 @@ public class ConsultaCursoListGUI extends javax.swing.JInternalFrame {
             });
         }
         tabela.setModel(tableModel);
+    }
+        
+       
         
     }
 private void Editar() throws NumberFormatException {
